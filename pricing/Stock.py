@@ -1,5 +1,5 @@
-from pricing.Product import Product
-from pricing.Market import Market
+from backtest.pricing.Product import Product
+from backtest.pricing.Market import Market
 
 
 class Stock(Product):
@@ -8,7 +8,7 @@ class Stock(Product):
 
     def present_value(self: "Stock", market: Market) -> None:
         ''' Present value of a stock is the current trading price'''
-        return market.quotes[self.id]['data']['TRDPRC_1']
+        return market.quotes[self.id]['data']['Price Close']
     
     def __str__(self: "Stock") -> str:
         return self.id + " " + str(self.present_value())

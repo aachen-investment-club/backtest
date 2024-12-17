@@ -1,5 +1,5 @@
-from pricing.Market import Market
-from pricing.Position import Position
+from backtest.pricing.Market import Market
+from backtest.pricing.Position import Position
 
 
 class Portfolio():

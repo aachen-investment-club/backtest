@@ -1,6 +1,6 @@
 import pandas as pd
 from typing import Union
-from datastream.Source import Source
+from backtest.datastream.Source import Source
 
 
 class EODSource(Source):

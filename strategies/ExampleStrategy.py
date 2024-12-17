@@ -1,8 +1,7 @@
-# own modules
-from strategies.Strategy import Strategy
-from pricing.Portfolio import Portfolio
-from pricing.Position import Position
-from pricing.Stock import Stock
+from backtest.strategies.Strategy import Strategy
+from backtest.pricing.Portfolio import Portfolio
+from backtest.pricing.Position import Position
+from backtest.pricing.Stock import Stock
 
 
 class ExampleStrategy(Strategy):

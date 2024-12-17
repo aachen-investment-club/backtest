@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from pricing.Portfolio import Portfolio
+from backtest.pricing.Portfolio import Portfolio
 
 
 class Strategy(ABC):

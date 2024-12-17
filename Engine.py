@@ -4,11 +4,11 @@ import os
 import quantstats as qs
 
 # own modules
-from pricing.Portfolio import Portfolio
-from pricing.Market import Market
-from datastream.Datastream import Datastream
-from datastream.EODSource import EODSource
-from strategies.Strategy import Strategy
+from backtest.pricing.Portfolio import Portfolio
+from backtest.pricing.Market import Market
+from backtest.datastream.Datastream import Datastream
+from backtest.datastream.EODSource import EODSource
+from backtest.strategies.Strategy import Strategy
 
 
 class Engine():
