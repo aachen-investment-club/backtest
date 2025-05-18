@@ -1,7 +1,6 @@
 import pandas as pd
 from tqdm import tqdm
 import os
-import quantstats as qs
 
 # own modules
 from backtest.pricing.Portfolio import Portfolio
@@ -61,8 +60,9 @@ class Engine():
                 # update progress bar
                 pbar.update(1)
 
-        returns = pd.Series(self.portfolio_nav).pct_change().dropna()
-        qs.reports.metrics(returns, mode='full')
+        # returns = pd.Series(self.portfolio_nav).pct_change().dropna()
+
+
 
 
     def save(self, dir: str) -> None:
@@ -78,16 +78,6 @@ class Engine():
         nav_df['returns'] = nav_df['nav'].pct_change()
         nav_df.to_parquet(save_dir + 'nav.parquet')
 
-        # save stats df
-        stats = {
-            "cagr" : qs.stats.cagr(nav_df['returns']),
-            "volatility" : qs.stats.volatility(nav_df['returns']),
-            "sharpe" : qs.stats.sharpe(nav_df['returns']),
-            "max_drawdown" : qs.stats.max_drawdown(nav_df['returns']),
-        }
-
-        stats_df = pd.DataFrame(stats.items(), columns=['metric', 'value'])
-        stats_df.to_parquet(save_dir + 'stats.parquet')
-
+       # TODO: Compute stats
 
 
